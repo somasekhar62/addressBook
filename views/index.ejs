@@ -1,0 +1,35 @@
+<% layout("layouts/boilerplate") %>
+<h3>
+    All the details
+</h3>
+<style>
+.address-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 2 items per row */
+    gap: 10px; /* Add some spacing */
+    margin-top: 10px;
+    margin-left: 10px;
+    color: black;
+}
+
+
+.card {
+    border: 1px solid black;
+    padding: 8px; /* Adjust padding inside the card */
+}
+
+</style>
+<div class="address-container mt-3" style="text-align: center;">
+    <% for(let add of alladdress){ %>
+        <a href="/address/<%=add._id%>" style="text-decoration: none;">
+            <div class="card" style="border: 1px solid black;">
+                <div class="card-body">
+                    <h5 class="card-title"><%= add.name %></h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary"><b><%= add.phonenumber %></b></h6>
+                    <p class="card-text"><%= add.occupation %></p>
+        
+                </div>
+            </div>
+        </a>
+    <% } %>
+</div>

@@ -1,0 +1,52 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+<form method="post" action="/address/<%=lf._id%>?_method=PUT" novalidate class="needs-validation">
+    <div class="mb-3">
+    <label class="form-label">Name of the receipt </label>
+    <input type="text" placeholder="Add an name "value="<%=lf.name%>" name="address[name]"  class="form-control" required/>
+    <div class="valid-feedback">Title looks Good!</div>
+    </div>
+    <div class="mb-3">
+    <label class="form-label">Enter the Adress </label>
+   <textarea placeholder="Add the Address" name="address[address1]" rows="6" cols="35" class="form-control" required><%=lf.address1%></textarea>
+   <div class="invalid-feedback">Address should be short</div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">(Optional Address)</label>
+       <textarea placeholder="Add the Address" name="address[address2]"  rows="6" cols="35" class="form-control"><%=lf.address2%></textarea>
+       <div class="invalid-feedback">Address should be short</div>
+        </div>
+    <div class="row">
+    <div class="mb-3 col-md-4">
+    <label class="form-label">Enter the Phonenumber </label>
+    <input type="number" placeholder="8143833945"name="address[phonenumber]" value="<%=lf.phonenumber%>" class="form-control" required/>
+    <div class="invalid-feedback">Phonenumber should be valid</div>
+    </div>
+    <div class="mb-3 col-md-8">
+    <label class="form-label">Realation</label>
+    <input type="text" placeholder="Relation"name="address[relation]"  value="<%=lf.relation%>"class="form-control" required/>
+    <div class="invalid-feedback">Relation Required</div>
+    </div>
+    </div>
+    <div class="mb-3">
+    <label class="form-label"> Enter the e-mail</label>
+    <input type="email" placeholder="pedapatisathwik@gmail.com"name="address[email]" value="<%=lf.email%>" class="form-control" required/>
+    <div class="invalid-feedback">Email Required</div>
+    </div>
+    <div class="mb-3">
+    <label class="form-label">Occupation</label>
+    <input type="text" placeholder="Software Engineer"name="address[occupation]"  value="<%=lf.occupation%>"class="form-control" required/>
+    <div class="invalid-feedback">Occupation required</div>
+    </div>
+    <div class="mb-3">
+    <label class="form-label">Status of Socialmedia</label>
+    <input type="text" placeholder="Active on Socialmedia"name="address[socialmedia]" value="<%=lf.socialmedia%>"class="form-control"/>
+    <div class="invalid-feedback">Occupation required</div>
+    </div>
+    <button class="btn btn-dark add-btn mt-3">Edit</button>    
+</form>
+  </div>
+</div>
+</body>

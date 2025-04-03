@@ -1,0 +1,35 @@
+<% layout("layouts/boilerplate") %>
+<style>
+  .details{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2rem;
+  }
+</style>
+<div class="card text-center " style="margin-top: 6rem;">
+  <div class="card-header">
+    Owned by <%=lf.owner.username%>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Information about<%=lf.name%></h5>
+    <p class="card-text">Address:<%=lf.address1%></p>
+    <p class="card-text">(Optional):<%=lf.address2%></p>
+    <p class="card-text">Relationship:<%=lf.relation%></p>
+    <p class="card-text">Email-id:<%=lf.email%></p>
+    <p class="card-text">Status on socialmedia:<%=lf.socialmedia%></p>
+    <div class="details">
+      <form action="/address/<%=lf._id%>/edit">
+        <button class=" btn btn-dark"><i class="fa-solid fa-pencil"></i> Edit
+        </button> </form>
+        <form action="/address/<%=lf._id %>?_method=DELETE" method="POST">
+      <button class="btn btn-danger" style="margin-left: 2rem ;"><i class="fa-solid fa-trash"></i> Delete</button>
+        </form>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    Contact Info:
+  <b><%= lf.phonenumber%></b>
+  Profession:<b><%= lf.occupation%></b>
+  </div>
+</div>
