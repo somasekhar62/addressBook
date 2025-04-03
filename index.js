@@ -10,12 +10,14 @@ const ejsMate=require("ejs-mate");
 const flash=require("connect-flash");
 const session=require("express-session");
 const passport=require("passport");
+const MongoStore = require('connect-mongo');
 const localstragety=require("passport-local");
 const User=require("./models/UserModel.js");
 app.use(session({
   secret:"mysecretstring",
   resave:false,
   saveUninitialized:true,
+  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
   cookie:{
     expires:Date.now()+7*24*60*60*1000,
     maxAge:7*24*60*60*1000,
