@@ -144,14 +144,7 @@ app.post("/signup", async (req, res) => {
       })
 });
 
-// app.get("/demouser",async(req,res)=>{
-//   let fakeuser= new User({
-//     email:"sathwik@gmail.com",
-//     username:"sathwikpedapati"
-//   });
-//   let hello=await User.register(fakeuser,"helloworld");
-//   res.send(hello);
-// })
+
 app.use((req,res,next)=>{
   res.locals.success=req.flash("success");
   res.locals.error=req.flash("error");
