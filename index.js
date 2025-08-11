@@ -51,7 +51,7 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log("MongoDB Connection Error:", err));
   app.get("/", (req, res) => {
-    res.send("Server is running...");
+    // res.send("Server is running...");
     res.redirect("/alladdress");
   });
 // Define the /address route
